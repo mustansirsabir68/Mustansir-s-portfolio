@@ -2,21 +2,21 @@
 
 // your_info.jsx
 
-const backgroundImageUrl = 'https://images.wallpaperscraft.com/image/single/man_photographer_roof_146991_3840x2400.jpg';
+const backgroundImageUrl = 'src/assets/images/developer.jpg';
 
 
 // Enter here your first and last name
 const name = {
-  firstname: 'Jonathan',
-  lastname: 'Dominion',
+  firstname: 'Mustansir',
+  lastname: 'Sabir',
 // Enter as url a link where your resume can be downloaded ( dropbox, OneDrive, ect )
-  url: 'https://www.google.com',
+  url: 'https://drive.google.com/file/d/1Bv8H_sXpvH7pASD0-GZH3Du1uk29VvYe/view?usp=sharing',
 };
 
 // Display your job title or skills or whatever you want in the typewriter
 const typeWriterText = [
-  'Photographer...',
-  'UX/UI designer...',
+  'Full‑stack Dev...',
+  'AI Fan...',
   'Cool dude...'  
 ];
 
@@ -25,12 +25,12 @@ const socialProfiles = [
   {
     name: 'LinkedIn',
     icon: 'lni lni-linkedin',
-    url: 'https://www.linkedin.com/in/christoph-pfrommer',
+    url: 'https://www.linkedin.com/in/mustansir-sabir-139495206',
   },
   {
     name: 'GitHub',
     icon: 'lni lni-github',
-    url: 'https://github.com/Pfrommer1982',
+    url: 'https://github.com/mustansirsabir68',
   },
   //   Add more social profiles here, it will automatically add more link-buttons with icons (if available)
   //   {
@@ -52,42 +52,42 @@ const categories = [
   {
     name: 'Web Development',
     icon: 'lni lni-code',
-    title: 'Photography',
+    title: 'Full‑Stack .NET Development',
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas diam lorem, tempus at dapibus vitae, vehicula sit amet dui. Fusce at libero id massa ornare molestie sed eu tellus.",
+      "Built scalable RESTful APIs, responsive Blazor/Telerik UI components, and customized DNN CMS modules. Demonstrated versatility across backend, frontend, and enterprise integrations with consistent on‑time delivery.",
     skills: [
       {
-        icon: 'lni lni-camera',
-        title: 'HTML5',
+        icon: 'lni lni-code',
+        title: 'Web Development',
       },
       {
-        icon: 'lni lni-certificate',
-        title: 'CSS3',
+        icon: 'lni lni-layout',
+        title: 'Frontend Design',
       },
       {
-        icon: 'lni lni-instagram',
-        title: 'JavaScript',
+        icon: 'lni lni-laptop',
+        title: 'Backend API',
       },
     ],
   },
   {
     name: 'Software',
     icon: 'lni lni-code',
-    title: 'Software',
+    title: 'Performance Optimization',
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas diam lorem, tempus at dapibus vitae, vehicula sit amet dui. Fusce at libero id massa ornare molestie sed eu tellus.",
+    "Delivered measurable speed gains by reducing query execution time up to 73% and sustaining 99.9% uptime for high‑volume enterprise applications. Specialized in SQL tuning, caching strategies, and API performance improvements.",
     skills: [
       {
-        icon: 'lni lni-adobe',
-        title: 'adobe',
+        icon: 'lni lni-dashboard',
+        title: 'Performance Metrics',
       },
       {
-        icon: 'lni lni-code',
-        title: 'Code',
+        icon: 'lni lni-timer',
+        title: 'Speed Optimization',
       },
       {
-        icon: 'lni lni-sketch',
-        title: 'Sketch'
+        icon: 'lni lni-stats-up',
+        title: 'Measurable Improvements'
       },
      
       
@@ -96,17 +96,21 @@ const categories = [
   {
     name: 'brands',
     icon: 'lni lni-code',
-    title: 'Brands',
+    title: 'Enterprise Security Solutions',
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas diam lorem, tempus at dapibus vitae, vehicula sit amet dui. Fusce at libero id massa ornare molestie sed eu tellus.",
+    "Engineered secure modules and applied OWASP best practices to remediate vulnerabilities, strengthen CSP compliance, and safeguard enterprise systems against XSS, CSRF, and unauthorized access attempts.",
     skills: [
       {
-        icon: 'lni lni-pinterest',
-        title: 'Pinterest',
+        icon: 'lni lni-shield',
+        title: 'Security',
       },
       {
-        icon: 'lni lni-crop',
-        title: 'Crop',
+        icon: 'lni lni-lock',
+        title: 'Authentication',
+      },
+      {
+        icon: 'lni lni-protection',
+        title: 'Enterprise‑grade Defense',
       },
       
     ],
@@ -116,9 +120,9 @@ const categories = [
 
 // Here you can give in your achiements in a number counter animation
 const achievements = [
-  { word: 'bullshit', value: 100, unit: '%' },
-  { word: 'finished projects', value: 7500, unit: '' },
-  { word: 'experience', value: 20, unit: ' years' },
+  { word: 'On‑time Delivery', value: 95, unit: '%' },
+  { word: 'Database Response Optimization', value: '73', unit: '%' },
+  { word: 'experience', value: 4, unit: ' years' },
 ];
 
 
@@ -126,24 +130,19 @@ const achievements = [
 // If you already have some projects, fill the url 
 const projectData = [
   {
-    title: 'Project 1',
-    description: 'Description of Project 1',
-    demoUrl: 'https://wallpaperaccess.com/full/530366.jpg' 
+    title: 'FMB Malegaon',
+    description: 'Designed and implemented a system to manage meal counts for adults and children, ensuring accurate food preparation and minimizing wastage. Built using Blazor, SQL Server, HTML, JavaScript, and C#, the project included features such as stop/start Thaali management, conditional count logic, and PDF report generation. Reports tracked daily participation, highlighting how many users opted in or out, enabling precise meal planning. The solution demonstrated expertise in full‑stack development, database optimization, and reporting automation for real‑world operational efficiency',
+    category: 'OPERATIONS PLATFORM',
+    technologies: ['Blazor', 'C#', 'SQL Server', 'Reporting'],
+    githubUrl: 'https://github.com/mustansirsabir68/FMBMalegaonJamaat',
+    demoUrl: 'src/assets/images/fmb-project.png' 
   },
   {
-    title: 'Project 2',
-    description: 'Description of Project 2',
-    demoUrl: 'https://wallpapercave.com/wp/wp1933134.jpg' 
-  },
-  {
-    title: 'Project 3',
-    description: 'Description of Project 3',
-    demoUrl: 'https://c4.wallpaperflare.com/wallpaper/43/399/700/photography-camera-birds-animals-wallpaper-preview.jpg' 
-  },
-  {
-    title: 'Project 2',
-    description: 'Description of Project 2',
-    demoUrl: 'src/assets/images/Jonathan Dominion Template.gif' 
+    title: 'Mustansir\'s Portfolio Website ',
+    description: 'Designed and developed a personal portfolio website to showcase projects, skills, and achievements with a clean, responsive UI. Built using modern web technologies and optimized for performance, accessibility, and scalability, the site highlights expertise in .NET, SQL, and security practices while providing an engaging user experience.',
+    category: 'PERSONAL BRAND',
+    technologies: ['React', 'Vite', 'Responsive UI', 'UX'],
+    demoUrl: 'src/assets/images/Mustansir Sabir Template.gif' 
   },
   
 ];
@@ -155,9 +154,9 @@ const projectData = [
 
 // You can tell something about yourself in the infotext.
 const aboutMeText = {
-  infotext: `Hi there, I'm Jonathan. With 20 years of experience as photographer Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas diam lorem, tempus at dapibus vitae, vehicula sit amet dui. Fusce at libero id massa ornare molestie sed eu tellus.
+  infotext: `Hi, I am Mustansir Sabir, a Software Engineer with 4 years of experience delivering scalable, secure enterprise applications across the Microsoft .NET ecosystem. My expertise spans performance optimization, RESTful API development, and enterprise security remediation, with proven results such as reducing query execution time by 73% and sustaining a 95% on‑time delivery rate in Agile teams. Skilled in C#, ASP.NET, Blazor, SQL, and microservices, I focus on building solutions that balance speed, security, and reliability while enhancing user experience. Passionate about continuous learning, I bring a pragmatic approach to solving complex problems and driving impactful results.
     `,
-  power_slogan: `Lorem ipsum dolor sit amet`,
+  power_slogan: `Building fast, secure, and reliable systems that scale with confidence.`,
 };
 
 // For contact form: You need to make an account on emailjs.com

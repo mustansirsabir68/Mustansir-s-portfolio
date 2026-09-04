@@ -23,8 +23,8 @@ const Achievement = () => {
         <div className="row">
           <div className="col-lg-10 offset-lg-1 col-md-12 col-12">
             <div className="title">
-              <h2>"Lorem ipsum dolor sit amet, consectetur adipiscing"</h2>
-              <p>Fusce at libero id massa ornare molestie sed eu tellus.</p>
+              <h2>"Full‑Stack .NET Systems Engineer"</h2>
+              <p>Scalable, secure full‑stack .NET development—performance optimized via SQL tuning, caching, and async patterns, with pragmatic enterprise security controls to ensure reliability and reduce risk.</p>
             </div>
           </div>
         </div>

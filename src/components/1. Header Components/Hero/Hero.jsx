@@ -20,14 +20,13 @@ const Hero = () => {
         <div className='row align-items-center'>
           <div className='hero-content'>
             <div className='name-container wow fadeInLeft' data-wow-delay='.4s'>
-              <name>
-                <h1 className='first-name'>{firstname}</h1>
-                <h1 className='last-name'>{lastname}</h1>
-              </name>
+              <p className="hero-kicker">[ SOFTWARE ENGINEER / .NET SPECIALIST ]</p>
+              <h1 className='first-name'>{firstname}</h1>
+              <h1 className='last-name'>{lastname}</h1>
             </div>
             <div className='typewriter-container wow fadeInLeft' data-wow-delay='.6s'>
               <Typewriter />
-      
+              <p className="hero-intro">I build fast, secure systems with a sharp eye for the details that make products work.</p>
             </div>
             <div className='btn-pos'>
               {socialProfiles.map((profile, index) => (

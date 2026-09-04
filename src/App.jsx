@@ -14,10 +14,25 @@ import AboutMe from './components/3. Footer Components/AboutMe/AboutMe';
 
 // 4. Utility Components
 import Spinner from './components/4. Utility Components/Spinner/Spinner';
+import AIAssistant from './components/4. Utility Components/AIAssistant/AIassistant';
+import FloatingAssistant from './components/4. Utility Components/AIAssistant/FloatingAssistant';
 import { name } from './your_info';
 import ScrollToTopButton from './components/4. Utility Components/ScrollToTopButton/ScrollToTopButton';
 
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+function Home() {
+  return (
+    <>
+      <Hero />
+      <Skillz />
+      <ScrollToTopButton />
+      <Achievement />
+      <Projects />
+      <AboutMe />
+      <FloatingAssistant />
+    </>
+  );
+}
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -30,21 +45,16 @@ function App() {
   }, []);
 
   return (
-    <>
+    <Router>
       {loading ? (
         <Spinner />
       ) : (
-        <>
-          <Hero />
-          <Skillz />
-          <ScrollToTopButton />
-          <Achievement />
-          <Projects />
-          <AboutMe />
-          
-        </>
+        <Routes>
+          <Route path="/Complete_Portfolio/" element={<Home />} />
+          <Route path="/Complete_Portfolio/assistant" element={<AIAssistant />} />
+        </Routes>
       )}
-    </>
+    </Router>
   );
 }
 

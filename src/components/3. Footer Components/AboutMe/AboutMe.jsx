@@ -15,12 +15,12 @@ const AboutMe = () => {
                 About me: <br />
               </h2>
 
-              <p className="wow fadeInUp" data-wow-delay=".4s">
-                <hr /> {infotext}
-              
+              <div className="about-copy wow fadeInUp" data-wow-delay=".4s">
                 <hr />
-                <h2>{power_slogan} </h2>
-              </p>
+                <p>{infotext}</p>
+                <hr />
+                <h3>{power_slogan}</h3>
+              </div>
             </div>
           </div>
           <div className="col-lg-6 col-md-12">

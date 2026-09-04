@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { name } from '../../../your_info';
-
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const { url } = name;
@@ -29,6 +29,13 @@ const Navbar = () => {
     <>
       <nav className={`navbar navbar-expand-lg  ${isMenuOpen ? 'navbar-open' : ''}`}>
         <div className="container-fluid">
+          <a className="brand" href="#Home" aria-label="Mustansir Sabir home">
+            <span className="brand-mark">MS</span>
+            <span className="brand-copy">
+              <strong>Mustansir Sabir</strong>
+              <small>software engineer</small>
+            </span>
+          </a>
           <button
             className={`navbar-toggler custom-toggler ${isMenuOpen ? 'open' : ''}`}
             type="button"
@@ -59,18 +66,19 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#ContactMe" className={`nav-link ${isMenuOpen ? 'not-blurred' : ''}`}>
-                  <span className='link-span'>Contact Me</span>
-                </a>
-              </li>
-              <li className="nav-item">
                 <a href={url} className={`nav-link ${isMenuOpen ? 'not-blurred' : ''}`}>
                   <span className='link-span'>
                     Resume<i className="icon lni lni-download"></i>
                   </span>
                 </a>
               </li>
+              <li className="nav-item">
+                 <Link to="/Complete_Portfolio/assistant" className={`nav-link mustansir-ai ${isMenuOpen ? 'not-blurred' : ''}`}>
+                  <span className='link-span'>Mustansir AI</span>
+                </Link>
+              </li>
             </ul>
+            <span className="nav-status"><i></i> available for select projects</span>
           </div>
         </div>
       </nav>
