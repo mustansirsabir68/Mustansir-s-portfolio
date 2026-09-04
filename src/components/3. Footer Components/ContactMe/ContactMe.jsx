@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import './ContactMe.css';
 import axios from 'axios';
 import { Button } from 'pixel-retroui';
+import { LLM_API_BASE_URL } from '../../../config';
 
 const ContactMe = () => {
   const form = useRef();
@@ -17,7 +18,7 @@ const ContactMe = () => {
     const formData = new FormData(form.current);
 
     try {
-      await axios.post('http://localhost:8000/send', formData, {
+      await axios.post(`${LLM_API_BASE_URL}/send`, formData, {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       });
       setMessageSent(true);
