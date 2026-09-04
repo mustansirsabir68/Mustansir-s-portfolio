@@ -34,7 +34,7 @@
 .fa-header { height: 66px !important; flex-shrink: 0; padding: 10px 14px !important; background: var(--dark-color) !important; border-bottom: 3px solid var(--ink) !important; }
 .fa-mbox { display: grid !important; place-items: center !important; width: 38px !important; height: 38px !important; color: var(--ink) !important; background: var(--highlight-color) !important; border: 3px solid var(--ink) !important; border-radius: 0 !important; font: 700 15px 'IBM Plex Mono', monospace !important; }
 .fa-title { color: var(--light-white) !important; font: 700 12px 'IBM Plex Mono', monospace !important; }
-.fa-close { color: var(--light-white) !important; border: 2px solid transparent !important; border-radius: 0 !important; font-family: 'IBM Plex Mono', monospace !important; }
+.fa-close { display: grid !important; place-items: center !important; flex-shrink: 0; width: 34px !important; height: 34px !important; margin-left: auto !important; margin-right: 2px !important; padding: 6px !important; color: var(--light-white) !important; border: 2px solid transparent !important; border-radius: 0 !important; font-family: 'IBM Plex Mono', monospace !important; }
 .fa-close:hover { color: var(--ink) !important; background: var(--highlight-color) !important; border-color: var(--ink) !important; transform: none !important; }
 .fa-messages { flex: 1 !important; padding: 18px !important; background: var(--medium-color) !important; }
 .fa-row { gap: 9px !important; }
