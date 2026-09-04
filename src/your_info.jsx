@@ -142,6 +142,7 @@ const projectData = [
     description: 'Designed and developed a personal portfolio website to showcase projects, skills, and achievements with a clean, responsive UI. Built using modern web technologies and optimized for performance, accessibility, and scalability, the site highlights expertise in .NET, SQL, and security practices while providing an engaging user experience.',
     category: 'PERSONAL BRAND',
     technologies: ['React', 'Vite', 'Responsive UI', 'UX'],
+    githubUrl: 'https://github.com/mustansirsabir68/Mustansir-s-portfolio',
     demoUrl: 'src/assets/images/Mustansir Sabir Template.gif' 
   },
   
