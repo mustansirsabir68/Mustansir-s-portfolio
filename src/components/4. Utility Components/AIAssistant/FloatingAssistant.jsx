@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import { Button } from "pixel-retroui";
 import './FloatingAssistant.css';
+import { LLM_API_BASE_URL } from '../../../config';
 
 export default function FloatingAssistant() {
   const [open, setOpen] = useState(false);
@@ -30,7 +31,7 @@ export default function FloatingAssistant() {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:8000/predict", { text: text });
+      const res = await axios.post(`${LLM_API_BASE_URL}/predict`, { text: text });
       const aiText = res?.data?.result ?? "Sorry, no response.";
       setMessages((m) => [...m, { sender: "ai", text: aiText }]);
     } catch {

@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import { Button, Card } from 'pixel-retroui';
 import './Assistant.css';
+import { LLM_API_BASE_URL } from '../../../config';
 
 function AssistantPage() {
   const [messages, setMessages] = useState([
@@ -48,7 +49,7 @@ const sendMessage = async () => {
     setInput('');
 
     try {
-      const res = await axios.post('http://localhost:8000/predict', { text: input });
+      const res = await axios.post(`${LLM_API_BASE_URL}/predict`, { text: input });
       const aiMessage = { sender: 'ai', text: res.data.result };
       setMessages((prev) => [...prev, aiMessage]);
     } catch (err) {
@@ -59,7 +60,7 @@ const sendMessage = async () => {
   const handleCompare = async () => {
     if (!jdText.trim()) return;
     try {
-      const res = await axios.post('http://localhost:8000/match', { text: jdText });
+      const res = await axios.post(`${LLM_API_BASE_URL}/match`, { text: jdText });
       const { score: score, details: details } = res.data;
       console.log (res.data)
        // Push a structured AI message that includes analysis metadata
