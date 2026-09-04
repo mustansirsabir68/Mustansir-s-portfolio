@@ -31,8 +31,8 @@ function Home() {
       <AboutMe />
       <FloatingAssistant />
       <footer className="site-footer">
-        <span>MS_</span>
-        <p>&copy; {new Date().getFullYear()} Mustansir Sabir. Built with care.</p>
+        <span>Mustansir Sabir</span>
+        <p>&copy; {new Date().getFullYear()}. Built with care.</p>
       </footer>
     </>
   );
