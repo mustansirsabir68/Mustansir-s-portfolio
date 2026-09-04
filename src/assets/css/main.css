@@ -94,6 +94,10 @@ p {
   font-size: 16px;
 }
 
+.site-footer { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 70px; padding: 18px 20px; color: var(--light-white); background: var(--dark-color); border-top: 3px solid var(--hot-color); text-align: center; }
+.site-footer span { color: var(--highlight-color); font: 700 16px 'IBM Plex Mono', monospace; }
+.site-footer p { margin: 0; color: #d8d0de; font: 12px 'IBM Plex Mono', monospace; }
+
 
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -112,4 +116,5 @@ p {
   .row { margin: 0 -8px; }
   .row > [class*='col-'] { padding: 0 8px; }
   .col-lg-4, .col-lg-6, .col-lg-8, .col-lg-10 { width: 100% !important; margin-left: 0; }
+  .site-footer { flex-direction: column; gap: 6px; padding: 20px 14px; }
 }
