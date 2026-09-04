@@ -1,31 +1,62 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title id="title">Retro sunset grid landscape</title>
-  <desc id="desc">A pixel inspired purple sunset, mountain silhouette, stars, and neon perspective grid.</desc>
+  <title id="title">Retro software engineer workspace</title>
+  <desc id="desc">A pixel inspired dark IDE workspace with code windows, terminal prompts, circuit traces, and a software engineering identity mark.</desc>
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#241b2f"/>
-      <stop offset=".58" stop-color="#573356"/>
-      <stop offset="1" stop-color="#ff6b5a"/>
+    <linearGradient id="desk" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#241b2f"/>
+      <stop offset=".55" stop-color="#172f42"/>
+      <stop offset="1" stop-color="#176b87"/>
     </linearGradient>
-    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
-      <stop stop-color="#c8f36a"/>
-      <stop offset="1" stop-color="#ff6b5a"/>
-    </linearGradient>
-    <pattern id="stars" width="170" height="115" patternUnits="userSpaceOnUse">
-      <path d="M18 16h4v4h-4zM102 47h3v3h-3zM148 22h5v5h-5zM62 91h3v3h-3z" fill="#fffdf8" opacity=".8"/>
+    <pattern id="scanlines" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M0 0h8" stroke="#fffdf8" stroke-width="1" opacity=".04"/>
     </pattern>
-    <pattern id="grid" width="90" height="54" patternUnits="userSpaceOnUse" patternTransform="perspective(1)">
-      <path d="M0 0H90M0 0V54" fill="none" stroke="#c8f36a" stroke-width="2" opacity=".55"/>
+    <pattern id="dots" width="42" height="42" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2" fill="#c8f36a" opacity=".24"/>
     </pattern>
   </defs>
-  <rect width="1600" height="900" fill="url(#sky)"/>
-  <rect width="1600" height="520" fill="url(#stars)"/>
-  <circle cx="800" cy="390" r="190" fill="url(#sun)"/>
-  <path d="M0 585 245 400 355 505 530 280 735 530 890 335 1075 530 1265 300 1600 570V900H0Z" fill="#241b2f"/>
-  <path d="m0 625 205-120 155 55 170-130 190 130 165-105 190 104 195-140 330 170V900H0Z" fill="#176b87" opacity=".9"/>
-  <path d="M0 635h1600v265H0z" fill="#241b2f"/>
-  <path d="M800 635 0 900h1600Z" fill="url(#grid)" opacity=".85"/>
-  <path d="M0 660h1600M0 710h1600M0 770h1600M0 842h1600" fill="none" stroke="#ff6b5a" stroke-width="3" opacity=".75"/>
-  <path d="M800 635 120 900M800 635 320 900M800 635 510 900M800 635 650 900M800 635 950 900M800 635 1090 900M800 635 1280 900M800 635 1480 900" fill="none" stroke="#c8f36a" stroke-width="3" opacity=".65"/>
-  <rect y="0" width="1600" height="900" fill="none" stroke="#c8f36a" stroke-width="8" opacity=".65"/>
+  <rect width="1600" height="900" fill="url(#desk)"/>
+  <rect width="1600" height="900" fill="url(#scanlines)"/>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#dots)"/>
+  <path d="M0 730h1600v170H0z" fill="#241b2f" opacity=".85"/>
+  <path d="M0 730h1600" stroke="#ff6b5a" stroke-width="6"/>
+
+  <g transform="translate(100 128)">
+    <rect width="620" height="385" fill="#fffdf8" stroke="#241b2f" stroke-width="10"/>
+    <rect x="0" y="0" width="620" height="54" fill="#ff6b5a" stroke="#241b2f" stroke-width="10"/>
+    <circle cx="32" cy="27" r="9" fill="#241b2f"/><circle cx="62" cy="27" r="9" fill="#c8f36a"/><circle cx="92" cy="27" r="9" fill="#176b87"/>
+    <text x="130" y="34" fill="#241b2f" font-family="monospace" font-size="20" font-weight="700">portfolio.jsx</text>
+    <g font-family="monospace" font-size="19" font-weight="700">
+      <text x="28" y="98" fill="#9a5bb5">01</text><text x="70" y="98" fill="#176b87">const</text><text x="145" y="98" fill="#241b2f">engineer</text><text x="250" y="98" fill="#ff6b5a">=</text><text x="270" y="98" fill="#176b87">&#123;</text>
+      <text x="28" y="140" fill="#9a5bb5">02</text><text x="70" y="140" fill="#ff6b5a">name:</text><text x="155" y="140" fill="#176b87">'Mustansir'</text><text x="290" y="140" fill="#241b2f">,</text>
+      <text x="28" y="182" fill="#9a5bb5">03</text><text x="70" y="182" fill="#ff6b5a">focus:</text><text x="155" y="182" fill="#176b87">'.NET + AI'</text><text x="290" y="182" fill="#241b2f">,</text>
+      <text x="28" y="224" fill="#9a5bb5">04</text><text x="70" y="224" fill="#ff6b5a">craft:</text><text x="155" y="224" fill="#176b87">'secure systems'</text><text x="325" y="224" fill="#241b2f">,</text>
+      <text x="28" y="266" fill="#9a5bb5">05</text><text x="70" y="266" fill="#ff6b5a">status:</text><text x="170" y="266" fill="#176b87">'shipping'</text>
+      <text x="28" y="308" fill="#9a5bb5">06</text><text x="70" y="308" fill="#176b87">&#125;</text><rect x="88" y="292" width="12" height="22" fill="#ff6b5a"/>
+    </g>
+  </g>
+
+  <g transform="translate(930 120)">
+    <rect width="540" height="300" fill="#241b2f" stroke="#c8f36a" stroke-width="8"/>
+    <rect x="0" y="0" width="540" height="48" fill="#176b87" stroke="#c8f36a" stroke-width="8"/>
+    <text x="28" y="32" fill="#fffdf8" font-family="monospace" font-size="19" font-weight="700">TERMINAL // MS_SYSTEM</text>
+    <g font-family="monospace" font-size="21" font-weight="700">
+      <text x="30" y="100" fill="#c8f36a">$</text><text x="56" y="100" fill="#fffdf8">dotnet build</text>
+      <text x="30" y="143" fill="#ff6b5a">&#10003;</text><text x="58" y="143" fill="#fffdf8">0 errors, 0 warnings</text>
+      <text x="30" y="186" fill="#c8f36a">$</text><text x="56" y="186" fill="#fffdf8">deploy --secure</text>
+      <text x="30" y="229" fill="#c8f36a">&#9658;</text><text x="58" y="229" fill="#fffdf8">systems online_</text>
+    </g>
+  </g>
+
+  <g fill="none" stroke="#c8f36a" stroke-width="6" opacity=".75">
+    <path d="M720 310h100v150h110"/><path d="M720 440h55v170h250"/><path d="M1470 420v110h-130v105"/>
+  </g>
+  <g fill="#ff6b5a" stroke="#241b2f" stroke-width="5">
+    <circle cx="720" cy="310" r="10"/><circle cx="930" cy="460" r="10"/><circle cx="775" cy="440" r="10"/><circle cx="1470" cy="420" r="10"/>
+  </g>
+  <g transform="translate(1040 570)">
+    <rect width="310" height="145" fill="#c8f36a" stroke="#241b2f" stroke-width="8"/>
+    <text x="28" y="66" fill="#241b2f" font-family="monospace" font-size="42" font-weight="700">MS_</text>
+    <text x="30" y="106" fill="#241b2f" font-family="monospace" font-size="16" font-weight="700">BUILD / SHIP / IMPROVE</text>
+  </g>
+  <rect y="0" width="1600" height="900" fill="none" stroke="#c8f36a" stroke-width="8" opacity=".7"/>
 </svg>
