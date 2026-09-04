@@ -2,7 +2,11 @@
 
 // your_info.jsx
 
-const backgroundImageUrl = 'src/assets/images/retro-hero.svg';
+import retroHeroImage from './assets/images/retro-hero.svg';
+import fmbProjectImage from './assets/images/fmb-project.png';
+import portfolioProjectImage from './assets/images/Mustansir Sabir Template.gif';
+
+const backgroundImageUrl = retroHeroImage;
 
 
 // Enter here your first and last name
@@ -135,7 +139,7 @@ const projectData = [
     category: 'OPERATIONS PLATFORM',
     technologies: ['Blazor', 'C#', 'SQL Server', 'Reporting'],
     githubUrl: 'https://github.com/mustansirsabir68/FMBMalegaonJamaat',
-    demoUrl: 'src/assets/images/fmb-project.png' 
+    demoUrl: fmbProjectImage
   },
   {
     title: 'Mustansir\'s Portfolio Website ',
@@ -143,7 +147,7 @@ const projectData = [
     category: 'PERSONAL BRAND',
     technologies: ['React', 'Vite', 'Responsive UI', 'UX'],
     githubUrl: 'https://github.com/mustansirsabir68/Mustansir-s-portfolio',
-    demoUrl: 'src/assets/images/Mustansir Sabir Template.gif' 
+    demoUrl: portfolioProjectImage
   },
   
 ];
