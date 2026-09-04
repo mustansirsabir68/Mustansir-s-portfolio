@@ -1,6 +1,8 @@
 // FloatingAssistant.jsx
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
+import { Button } from "pixel-retroui";
+import './FloatingAssistant.css';
 
 export default function FloatingAssistant() {
   const [open, setOpen] = useState(false);
@@ -213,7 +215,8 @@ export default function FloatingAssistant() {
           aria-label="Open Mustansir AI quick chat"
           onClick={toggleOpen}
         >
-          AI
+          <span className="fa-launcher-mark">MS</span>
+          <span className="fa-launcher-label">AI</span>
         </button>
       )}
 
@@ -261,7 +264,7 @@ export default function FloatingAssistant() {
               placeholder="Ask a quick question about Mustansir. Press Enter to send."
               aria-label="Message input"
             />
-            <button className="fa-send" onClick={sendMessage} aria-label="Send message">Send</button>
+            <Button className="fa-send" onClick={sendMessage} aria-label="Send message" bg="#ff6b5a" textColor="#241b2f" shadow="#241b2f" borderColor="#241b2f">Send</Button>
           </div>
         </div>
       )}
