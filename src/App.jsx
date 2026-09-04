@@ -50,8 +50,8 @@ function App() {
         <Spinner />
       ) : (
         <Routes>
-          <Route path="/Complete_Portfolio/" element={<Home />} />
-          <Route path="/Complete_Portfolio/assistant" element={<AIAssistant />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/assistant" element={<AIAssistant />} />
         </Routes>
       )}
     </Router>

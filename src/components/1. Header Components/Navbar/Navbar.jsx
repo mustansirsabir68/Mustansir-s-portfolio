@@ -73,7 +73,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav-item">
-                 <Link to="/Complete_Portfolio/assistant" className={`nav-link mustansir-ai ${isMenuOpen ? 'not-blurred' : ''}`}>
+                 <Link to="/assistant" className={`nav-link mustansir-ai ${isMenuOpen ? 'not-blurred' : ''}`}>
                   <span className='link-span'>Mustansir AI</span>
                 </Link>
               </li>

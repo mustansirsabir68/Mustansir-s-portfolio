@@ -8,8 +8,8 @@ The site is built as a responsive React and Vite experience with a pixel-inspire
 
 ## Live Experience
 
-- Portfolio home: `/Complete_Portfolio/`
-- AI assistant: `/Complete_Portfolio/assistant`
+- Portfolio home: `/`
+- AI assistant: `/assistant`
 - GitHub: [mustansirsabir68/Mustansir-s-portfolio](https://github.com/mustansirsabir68/Mustansir-s-portfolio)
 - LinkedIn: [Mustansir Sabir](https://www.linkedin.com/in/mustansir-sabir-139495206)
 
@@ -94,7 +94,7 @@ npm install
 npm run dev
 ```
 
-Open the local Vite URL shown in the terminal. For the configured GitHub Pages base path, use `/Complete_Portfolio/`.
+Open the local Vite URL shown in the terminal.
 
 ### Production build
 
@@ -128,10 +128,10 @@ The global RetroUI-inspired design tokens are defined in [src/assets/css/main.cs
 The contact form currently posts to:
 
 ```text
-http://localhost:8000/send
+https://mustansir-llm-api.onrender.com/send
 ```
 
-Run the matching backend service locally if you want email delivery to work during development. Without the backend, the UI displays the existing error state without breaking the portfolio.
+The form uses the hosted Render API. Without the backend or allowed CORS origin, the UI displays the existing error state without breaking the portfolio.
 
 ## Mustansir AI
 
@@ -146,19 +146,28 @@ The assistant route provides:
 The assistant backend is expected at:
 
 ```text
-http://localhost:8000/predict
-http://localhost:8000/match
+https://mustansir-llm-api.onrender.com/predict
+https://mustansir-llm-api.onrender.com/match
 ```
 
-## Deployment
+## Vercel Deployment
 
-The project includes a `gh-pages` deployment script:
+Import the GitHub repository into Vercel with the Vite framework preset. Vercel detects these settings automatically:
+
+```text
+Build command: npm run build
+Output directory: dist
+Install command: npm install
+```
+
+The included `vercel.json` rewrite keeps React Router routes such as `/assistant` working on direct visits.
+
+For legacy GitHub Pages deployment, the project includes:
 
 ```bash
 npm run deploy
 ```
 
-Update the Vite base path and GitHub Pages settings if deploying under a different repository name.
 
 ## License
 
