@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Retro sunset grid landscape</title>
+  <desc id="desc">A pixel inspired purple sunset, mountain silhouette, stars, and neon perspective grid.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#241b2f"/>
+      <stop offset=".58" stop-color="#573356"/>
+      <stop offset="1" stop-color="#ff6b5a"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#c8f36a"/>
+      <stop offset="1" stop-color="#ff6b5a"/>
+    </linearGradient>
+    <pattern id="stars" width="170" height="115" patternUnits="userSpaceOnUse">
+      <path d="M18 16h4v4h-4zM102 47h3v3h-3zM148 22h5v5h-5zM62 91h3v3h-3z" fill="#fffdf8" opacity=".8"/>
+    </pattern>
+    <pattern id="grid" width="90" height="54" patternUnits="userSpaceOnUse" patternTransform="perspective(1)">
+      <path d="M0 0H90M0 0V54" fill="none" stroke="#c8f36a" stroke-width="2" opacity=".55"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="520" fill="url(#stars)"/>
+  <circle cx="800" cy="390" r="190" fill="url(#sun)"/>
+  <path d="M0 585 245 400 355 505 530 280 735 530 890 335 1075 530 1265 300 1600 570V900H0Z" fill="#241b2f"/>
+  <path d="m0 625 205-120 155 55 170-130 190 130 165-105 190 104 195-140 330 170V900H0Z" fill="#176b87" opacity=".9"/>
+  <path d="M0 635h1600v265H0z" fill="#241b2f"/>
+  <path d="M800 635 0 900h1600Z" fill="url(#grid)" opacity=".85"/>
+  <path d="M0 660h1600M0 710h1600M0 770h1600M0 842h1600" fill="none" stroke="#ff6b5a" stroke-width="3" opacity=".75"/>
+  <path d="M800 635 120 900M800 635 320 900M800 635 510 900M800 635 650 900M800 635 950 900M800 635 1090 900M800 635 1280 900M800 635 1480 900" fill="none" stroke="#c8f36a" stroke-width="3" opacity=".65"/>
+  <rect y="0" width="1600" height="900" fill="none" stroke="#c8f36a" stroke-width="8" opacity=".65"/>
+</svg>

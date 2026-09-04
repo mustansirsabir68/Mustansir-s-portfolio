@@ -2,7 +2,7 @@
 
 // your_info.jsx
 
-const backgroundImageUrl = 'src/assets/images/developer.jpg';
+const backgroundImageUrl = 'src/assets/images/retro-hero.svg';
 
 
 // Enter here your first and last name
