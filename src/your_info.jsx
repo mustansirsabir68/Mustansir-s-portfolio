@@ -3,7 +3,7 @@
 // your_info.jsx
 
 import fmbProjectImage from './assets/images/fmb-project.webp';
-import portfolioProjectVideo from './assets/images/portfolio-preview.mp4';
+import portfolioProjectVideo from './assets/images/portfolio-preview-web.mp4';
 import portfolioProjectImage from './assets/images/portfolio-preview.jpg';
 
 
