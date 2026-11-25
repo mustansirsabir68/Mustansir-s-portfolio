@@ -1,1 +1,1 @@
-export const LLM_API_BASE_URL = 'https://mustansir-llm-api.onrender.com';
+export const LLM_API_BASE_URL = 'https://mustansir-llm.vercel.app';
