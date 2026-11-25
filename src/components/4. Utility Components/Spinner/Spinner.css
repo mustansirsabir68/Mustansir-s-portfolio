@@ -1,7 +1,0 @@
-@import url('../../../assets/css/main.css');
-#page-loader { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; background: var(--ink); }
-.team-loader { text-align: center; }
-#loader-text { margin-bottom: 20px; color: var(--highlight-color); font: 700 24px 'IBM Plex Mono', monospace; letter-spacing: .08em; }
-.pulse-loader { position: relative; width: 110px; height: 30px; margin: auto; background: var(--light-white); border: 3px solid var(--light-white); box-shadow: 5px 5px 0 var(--hot-color); animation: loader-pulse 1s ease-in-out infinite alternate; }
-.countup { color: var(--ink); font: 700 14px 'IBM Plex Mono', monospace; line-height: 24px; }
-@keyframes loader-pulse { to { transform: translate(4px, 4px); box-shadow: 1px 1px 0 var(--hot-color); } }

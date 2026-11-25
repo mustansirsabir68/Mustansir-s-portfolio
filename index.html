@@ -3,11 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Apply the stored theme before paint so a light session never flashes dark.
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.dataset.theme = 'light'
+          document.documentElement.style.colorScheme = 'light'
+        }
+      } catch (error) {}
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <meta name="theme-color" content="#08090c" />
+    <title>Mustansir Sabir | Software Engineer</title>
+    <meta
+      name="description"
+      content="Mustansir Sabir is a software engineer building fast, secure enterprise systems in .NET: performance optimization, REST APIs and security remediation."
+    />
+    <meta property="og:title" content="Mustansir Sabir | Software Engineer" />
+    <meta
+      property="og:description"
+      content="Full-stack .NET engineer. 73% faster queries, 99.9% uptime, 95% on-time delivery."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..700;1,300..600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div className='bg-[#76B5C8]' id="root"></div>
+    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

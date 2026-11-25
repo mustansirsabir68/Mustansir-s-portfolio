@@ -1,9 +1,0 @@
-@import url('../../../assets/css/main.css');
-.About { background: var(--ink); border-top: 3px solid var(--ink); }
-.About .cta-content { padding: 0 50px; text-align: center; }
-.About .cta-content h2 { margin-bottom: 22px; color: var(--light-white); font-size: 36px; line-height: 1.2; }
-.About .cta-content p { color: var(--light-white); font-family: 'Space Grotesk', sans-serif; }
-.About .about-copy h3 { color: var(--highlight-color); font: 700 20px/1.4 'IBM Plex Mono', monospace; }
-.About .cta-content hr { margin: 20px 0; border: 0; border-top: 3px solid var(--highlight-color); opacity: 1; }
-.About .contact-sidebar { padding: 0 10px; }
-@media (max-width: 767px) { .About .cta-content { padding: 0; } .About .cta-content h2 { font-size: 28px; } .About .contact-sidebar { padding: 0; } }

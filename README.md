@@ -1,174 +1,145 @@
-# Mustansir's Portfolio
+# Mustansir Sabir — Portfolio (redesign)
 
-![Portfolio hero preview](src/assets/images/developer.jpg)
+Personal site for Mustansir Sabir, a software engineer working across the Microsoft
+.NET ecosystem: full-stack development, performance optimization and enterprise
+security.
 
-Personal portfolio website for Mustansir Sabir, a Software Engineer specializing in full-stack .NET development, performance optimization, enterprise security, and practical AI tooling.
-
-The site is built as a responsive React and Vite experience with a pixel-inspired RetroUI visual system, a project showcase, achievements, contact form, and a dedicated Mustansir AI assistant.
-
-## Live Experience
-
-- Portfolio home: `/`
-- AI assistant: `/assistant`
-- GitHub: [mustansirsabir68/Mustansir-s-portfolio](https://github.com/mustansirsabir68/Mustansir-s-portfolio)
-- LinkedIn: [Mustansir Sabir](https://www.linkedin.com/in/mustansir-sabir-139495206)
-
-## Highlights
-
-- Responsive portfolio layout for desktop, tablet, and mobile
-- RetroUI pixel cards, buttons, borders, and offset shadows
-- Warm ivory, aubergine, coral, mint, and teal visual palette
-- Hero section with animated role text and social links
-- Skills grouped into development, performance, and security disciplines
-- Project carousel with explicit previous/next navigation
-- Project metadata, technology chips, demos, and source links
-- Achievement metrics with animated counters
-- About section and responsive contact form
-- Mustansir AI chat route with day/night mode
-- Resume match analysis workflow for job descriptions
-- Accessible labels, focus states, and responsive controls
-
-## Screenshots
-
-### Portfolio hero
-
-![Portfolio background and hero](src/assets/images/developer.jpg)
-
-### FMB Malegaon project
-
-![FMB Malegaon project screenshot](src/assets/images/fmb-project.png)
-
-### Portfolio project preview
-
-![Portfolio project preview](src/assets/images/Mustansir%20Sabir%20Template.gif)
-
-## Technology
-
-- React 18
-- Vite
-- React Router
-- React Slick
-- Axios
-- React CountUp
-- React Intersection Observer
-- WOW.js
-- LineIcons
-- RetroUI via `pixel-retroui`
-- CSS with responsive layout utilities and custom design tokens
-
-## Project Structure
-
-```text
-src/
-  App.jsx                         Application routes and loading state
-  main.jsx                        React entry point and global styles
-  your_info.jsx                   Portfolio content and profile configuration
-  assets/
-    css/                          Global and vendor styles
-    images/                       Portfolio and project media
-  components/
-    1. Header Components/         Hero, navbar, and typewriter
-    2. Content Components/        Skills, achievements, and projects
-    3. Footer Components/         About and contact sections
-    4. Utility Components/        Assistant, loader, and scroll controls
-```
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18 or newer
-- npm
-
-### Install
+This version replaces the previous RetroUI/pixel theme with a dark "engineering
+console" direction — precise type, a single lime signal color, measured numbers,
+and motion that explains rather than decorates.
 
 ```bash
-git clone https://github.com/mustansirsabir68/Mustansir-s-portfolio.git
-cd Mustansir-s-portfolio
 npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build into dist/
+npm run preview  # serve the build
 ```
 
-### Run locally
+## Design direction
 
-```bash
-npm run dev
+- **Surface:** near-black `#08090c`, hairline borders, and a fine masked grid,
+  closer to a system dashboard than a marketing template.
+- **Type:** Inter Tight for display and emphasis (weight and italic of the same
+  family, no decorative serif), JetBrains Mono for labels and metadata.
+- **Signal:** one accent (`#c9f24e`) used for status, metrics and primary actions.
+- **Motion:** scroll reveals, count-ups on the metrics band, pointer-tracked
+  spotlight cards, a 3D tilt on project art. All motion is disabled under
+  `prefers-reduced-motion` (CSS + `MotionConfig`).
+- **Themes:** dark by default, with a light "paper" theme behind the toggle in
+  the nav. The active theme persists in `localStorage` and is applied before
+  first paint, so a light session never flashes dark.
+
+## Hero: 21st.dev component
+
+The homepage hero is `src/components/ui/shadcn-studio-hero-section-44.tsx`, a
+copy of the 21st.dev **shadcn-studio hero section 44**: rotating greeting,
+availability pill, CTAs, technology marquee, and a physics-driven lanyard ID
+card that can be dragged.
+
+It is wired to real content in `src/components/site/lanyard-hero.jsx`. The card
+uses `src/assets/images/photo.png`, and the marquee uses Simple Icons for the
+actual stack (C#, Blazor, React, JavaScript, Git, Vite, GitHub, NuGet). The
+SVGs are bundled in `src/assets/images/tech/` rather than hot-linked, and are
+recoloured in CSS: grey on coal, near-black ink on paper, so they stay legible
+in both themes.
+
+The 3D stack (`three`, `@react-three/fiber`, `@react-three/drei`,
+`@react-three/rapier`) is ~1.1 MB gzipped, so the card is loaded as a lazy
+chunk after the hero copy paints. The same draggable badge runs at every size:
+beside the copy from `lg` up, and in flow under the CTAs on phones and tablets,
+where the camera reframes itself to fit the shorter canvas and the canvas takes
+touch drags directly. The cord is drawn as a physics-followed cylinder rather
+than a per-frame Frenet tube, which removes an intermittent
+degenerate-geometry artifact.
+
+## shadcn / TypeScript setup
+
+The project was JSX-only, so the registry foundation was added without
+converting existing files:
+
+- `components.json` — shadcn CLI config (`new-york`, CSS variables, `@/` aliases)
+- `tsconfig.json` — `allowJs`, `checkJs: false`, `jsx: react-jsx`, `@/*` paths
+- `vite.config.js` — `@` alias and the Tailwind v4 plugin
+- `src/index.css` — semantic tokens (`background`, `foreground`, `card`,
+  `primary`, `muted`, `muted-foreground`, `border`, `ring`) mapped onto the
+  site's coal/paper/lime palette, so pasted components inherit the theme
+- The site's gray text token was renamed `muted` → `ash` to avoid colliding with
+  shadcn's `bg-muted` surface token
+
+React was upgraded to 19 (required by `@react-three/fiber` 9), and the unused
+RetroUI-era dependencies (`pixel-retroui`, `wow.js`, `react-slick`,
+`react-countup`, `react-intersection-observer`, `react-color`,
+`react-thumbnail`, `emailjs-com`) were removed.
+
+## Components (21st.dev patterns)
+
+21st.dev distributes copy-paste React/Tailwind components rather than a runtime
+package, so the patterns are implemented locally in `src/components/ui/` to keep
+the build dependency-free and fully editable:
+
+| File | Pattern |
+| --- | --- |
+| `spotlight.jsx` | Pointer-following spotlight card |
+| `reveal.jsx` | Blur-fade reveal and viewport `Counter` |
+| `tilt.jsx` | Spring-based 3D tilt with pointer glare |
+| `button.jsx` | `SectionHeading` (optional kicker, same-family italic accent) |
+| `theme-toggle.jsx` | Dark/light switch, persisted and applied pre-paint |
+| `scroll-progress.jsx` | Scroll-linked progress bar |
+| `brand-icons.jsx` | GitHub / LinkedIn marks (lucide v1 removed brand icons) |
+
+## Structure
+
+```
+src/
+  App.jsx                     routes: / and /assistant
+  main.jsx                    entry, imports index.css
+  index.css                   Tailwind v4 theme tokens, base, utilities, keyframes
+  your_info.jsx               all personal content (single source of truth)
+  config.js                   LLM API base URL
+  components/
+    site/                     nav, lanyard-hero, expertise, metrics, work,
+                              about, contact, footer, floating-assistant
+    assistant/assistant-page  full-page AI chat + résumé match
+    ui/                       the primitives above, including the lanyard card
+  assets/images/              project art, portrait, optimized preview video
 ```
 
-Open the local Vite URL shown in the terminal.
+## Content
 
-### Production build
+Everything personal lives in `src/your_info.jsx`: name, résumé URL, social
+profiles, three capability areas, projects, bio and slogan. Editing that file
+updates the whole site.
 
-```bash
-npm run build
-```
+Facts shown in the hero spec card and metrics band come from that content:
+4 years of experience, 95% on-time delivery, 73% query-time reduction and 99.9%
+uptime. Nothing is invented for the design.
 
-### Preview the production build
+Project media is optimized: the portfolio screen recording was converted from a
+5.6 MB GIF to an 800 KB MP4 (autoplay, muted, looped, with a JPG poster), and the
+FMB screenshot from a 1.1 MB PNG to a 95 KB WebP.
 
-```bash
-npm run preview
-```
+## Features
 
-## Configuration
+- Sticky glass navigation, mobile menu, scroll progress, section anchors
+- Dark/light theme toggle, persisted across visits and applied before paint
+- Hero with a rotating greeting and a draggable physics ID card at every size
+- Capability cards, high-contrast metrics band with count-ups
+- Alternating project case studies with video/image previews and source links
+- About with photo treatment, pull-quote and quick facts
+- Contact form posting to the existing `POST /send` endpoint
+- Floating "Ask AI" widget posting to `POST /predict`
+- `/assistant` page: full chat, suggested prompts, and résumé match analysis
+  (`POST /match`) rendered with a score ring
+- Responsive from 360 px up; skip link, focus rings, reduced-motion support
 
-Most portfolio content can be changed in [src/your_info.jsx](src/your_info.jsx):
+## Backend
 
-- Name and resume URL
-- Typewriter messages
-- Social profile links
-- Skill categories
-- Achievement metrics
-- Project titles, descriptions, previews, technologies, and source links
-- About text and slogan
-- Contact service configuration
+The AI and contact features depend on the service in `src/config.js`
+(`https://mustansir-llm-api.onrender.com`). If it is asleep or unavailable, the
+UI shows a friendly inline error instead of failing silently. The contact form
+sends `name`, `email` and `message` as form-urlencoded data.
 
-The global RetroUI-inspired design tokens are defined in [src/assets/css/main.css](src/assets/css/main.css). Component-specific styles live alongside their React components.
+## Deploy
 
-## Contact Form
-
-The contact form currently posts to:
-
-```text
-https://mustansir-llm-api.onrender.com/send
-```
-
-The form uses the hosted Render API. Without the backend or allowed CORS origin, the UI displays the existing error state without breaking the portfolio.
-
-## Mustansir AI
-
-The assistant route provides:
-
-- Portfolio and career questions through `/predict`
-- Resume match analysis through `/match`
-- New chat reset
-- Responsive desktop sidebar and mobile chat layout
-- Day/night theme toggle persisted in local storage
-
-The assistant backend is expected at:
-
-```text
-https://mustansir-llm-api.onrender.com/predict
-https://mustansir-llm-api.onrender.com/match
-```
-
-## Vercel Deployment
-
-Import the GitHub repository into Vercel with the Vite framework preset. Vercel detects these settings automatically:
-
-```text
-Build command: npm run build
-Output directory: dist
-Install command: npm install
-```
-
-The included `vercel.json` rewrite keeps React Router routes such as `/assistant` working on direct visits.
-
-For legacy GitHub Pages deployment, the project includes:
-
-```bash
-npm run deploy
-```
-
-
-## License
-
-This project is available under the MIT License. See [LICENSE](LICENSE) for details.
+`npm run build` outputs a static `dist/`. Any static host works (Vercel/Netlify);
+`vercel.json` rewrites are already configured for the `/assistant` client route.

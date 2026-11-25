@@ -1,4 +1,0 @@
-@import url('../../../assets/css/main.css');
-.scroll-to-top { position: fixed; right: 20px; bottom: 20px; z-index: 999; display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; color: var(--ink); background: var(--highlight-color); border: 3px solid var(--ink); border-radius: 0; box-shadow: 4px 4px 0 var(--ink); cursor: pointer; }
-.scroll-to-top:hover { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
-@media (max-width: 767px) { .scroll-to-top { bottom: 84px; } }

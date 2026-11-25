@@ -1,67 +1,58 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { MotionConfig } from 'motion/react'
 
-// 1. Header Components
-import Hero from './components/1. Header Components/Hero/Hero';
+import { name } from './your_info'
+import { Nav } from './components/site/nav'
+import { LanyardHero } from './components/site/lanyard-hero'
+import { Expertise } from './components/site/expertise'
+import { Metrics } from './components/site/metrics'
+import { Work } from './components/site/work'
+import { About } from './components/site/about'
+import { Contact } from './components/site/contact'
+import { Footer } from './components/site/footer'
+import { FloatingAssistant } from './components/site/floating-assistant'
+import { ScrollProgress } from './components/ui/scroll-progress'
+import { AssistantPage } from './components/assistant/assistant-page'
 
-// 2. Content Components
-import Skillz from './components/2. Content Components/Skillz/Skillz';
-import Achievement from './components/2. Content Components/Achievement/Achievement';
-import Projects from './components/2. Content Components/Projects/Projects';
-
-
-// 3. Footer Component
-import AboutMe from './components/3. Footer Components/AboutMe/AboutMe';
-
-// 4. Utility Components
-import Spinner from './components/4. Utility Components/Spinner/Spinner';
-import AIAssistant from './components/4. Utility Components/AIAssistant/AIassistant';
-import FloatingAssistant from './components/4. Utility Components/AIAssistant/FloatingAssistant';
-import { name } from './your_info';
-import ScrollToTopButton from './components/4. Utility Components/ScrollToTopButton/ScrollToTopButton';
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 function Home() {
   return (
     <>
-      <Hero />
-      <Skillz />
-      <ScrollToTopButton />
-      <Achievement />
-      <Projects />
-      <AboutMe />
+      <ScrollProgress />
+      <Nav />
+      <main id="main">
+        <LanyardHero />
+        <Expertise />
+        <Metrics />
+        <Work />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
       <FloatingAssistant />
-      <footer className="site-footer">
-        <span>Mustansir Sabir</span>
-        <p>&copy; {new Date().getFullYear()}. Built with care.</p>
-      </footer>
     </>
-  );
+  )
 }
-function App() {
-  const [loading, setLoading] = useState(true);
 
-
+export default function App() {
   useEffect(() => {
-    document.title = `${name.firstname} ${name.lastname}`;
-    setTimeout(() => {
-      setLoading(false);
-    }, 800);
-  }, []);
+    document.title = `${name.firstname} ${name.lastname} | Software Engineer`
+  }, [])
 
   return (
-    <Router>
-      {loading ? (
-        <Spinner />
-      ) : (
+    <Router basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+      <MotionConfig reducedMotion="user">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-signal focus:px-5 focus:py-2.5 focus:font-mono focus:text-[0.68rem] focus:uppercase focus:tracking-[0.14em] focus:text-coal"
+        >
+          Skip to content
+        </a>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/assistant" element={<AIAssistant />} />
+          <Route path="/assistant" element={<AssistantPage />} />
         </Routes>
-      )}
+      </MotionConfig>
     </Router>
-  );
+  )
 }
-
-export default App;
-
-
